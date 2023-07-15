@@ -1,0 +1,19 @@
+{
+  "name": "@figured-layout-css/tailwindcss-plugin",
+  "version": "0.0.2",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "repository": "https://github.com/@figure-layout-css/tailwindcss-plugin",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.2",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.23"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0 || insiders"
+  }
+}
