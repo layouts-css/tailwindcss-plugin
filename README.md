@@ -1,4 +1,4 @@
-# ⛸️ @figured-layout-css/tailwindcss-plugin
+# ⛸️ @figured-out-css/tailwindcss-plugin
 
 ## Easy-to-understand layout classes modeled after Figma's Auto Layout combined with the power of Tailwind CSS
 
