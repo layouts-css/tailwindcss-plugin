@@ -1050,7 +1050,7 @@ Shorthand helper class for setting the same width and height property.
 
 ##### Options
 
-Note: To make things easy and consistant ayout-css sets css the following overrides which can be configured off if need be :
+Note: To ensure height and width work consistantly layout-css sets the following overrides which can be turned off if need be :
 
 ###### Html and Body elements maximum a height and width
 
@@ -1069,10 +1069,6 @@ module.exports = {
   ],
 };
 ```
-
-
-
-
 
 <br>
 
