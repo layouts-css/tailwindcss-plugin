@@ -1,4 +1,4 @@
-# ⛸️ @figured-out-css/tailwindcss-plugin
+# 🛌 @layout-css/tailwindcss-plugin
 
 ## Easy-to-understand layout classes modeled after Figma's Auto Layout combined with the power of Tailwind CSS
 
@@ -13,10 +13,10 @@
 
 Say goodbye to flexbox or grid headaches and create HTML layouts with ease!
 
-Yes - you can center a div with ease - we've.... figured (out the) layout 😉.
+Yes - you can center a div with ease 😉.
 
-Figured Layout CSS makes it a breeze to layout you HTML with it's easy-to-understand CSS layout classes, modeled after Figma's Auto Layout.
-As a Tailwind CSS plugin, you can combine Figured Layout's intuitive layout classes with the power of Tailwind CSS.
+layout-css makes it a breeze to layout you HTML with it's easy-to-understand CSS layout classes, modeled after Figma's Auto Layout.
+As a Tailwind CSS plugin, you can combine Layout's intuitive layout classes with the power of Tailwind CSS.
 <br/>
 
 <hr/>
@@ -27,7 +27,7 @@ As a Tailwind CSS plugin, you can combine Figured Layout's intuitive layout clas
 
 #### Install package
 
-`npm i -D @figured-layout-css/tailwindcss`
+`npm i -D @layout-css/tailwindcss`
 
 #### Add plugin to your tailwind.config.js
 
@@ -35,7 +35,7 @@ As a Tailwind CSS plugin, you can combine Figured Layout's intuitive layout clas
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  plugins: [require('@figured-layout-css/tailwindcss')],
+  plugins: [require('@layout-css/tailwindcss')],
 };
 ```
 
@@ -82,16 +82,16 @@ module.exports = {
 
 Figma is a popular tool for designing websites and apps. The Auto Layout Feature dyanmically arranges elements on the page so you don't have to manually position everything when resizing a component.
 
-The folloing image features the Auto Layout controls in Figma. The table details what can be done out-of-the box with Tailwind CSS and where the Figured Layout CSS is required.
+The folloing image features the Auto Layout controls in Figma. The table details what can be done out-of-the box with Tailwind CSS and where the layout-css is required.
 
 ![Figma Controls](/docs/images/figma-control/explaination.png)
 
 | Figma Control                                                                             | CSS Approach                                                                 |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| <span style="color:">1.a.</span> Horizontal resizing <br> 1.b. Verical resizing           | @figured-layout-css/tailwindcss <br>[Figma Component Resizing](#sizing)      |
+| <span style="color:">1.a.</span> Horizontal resizing <br> 1.b. Verical resizing           | @layout-css/tailwindcss <br>[Figma Component Resizing](#sizing)              |
 | 2. Corner radius                                                                          | Tailwind CSS <br>[Border Radius](https://tailwindcss.com/docs/border-radius) |
 | 3. Visability if overflow                                                                 | Tailwind CSS <br>[Overflow](https://tailwindcss.com/docs/overflow)           |
-| 4.a. Direction child components flow <br> 4.b. Alignment of child components in container | @figured-layout-css/tailwindcss <br> [Figma Component Alignment](#sizing)    |
+| 4.a. Direction child components flow <br> 4.b. Alignment of child components in container | @layout-css/tailwindcss <br> [Figma Component Alignment](#sizing)            |
 | 5. Space between child components                                                         | Tailwind CSS <br> [Gap](https://tailwindcss.com/docs/gap)                    |
 | 6.a. Horizontal padding, 6.b. Vertical padding                                            | Tailwind CSS <br> [Padding](https://tailwindcss.com/docs/padding)            |
 
@@ -984,9 +984,9 @@ Use `layout-revert-html` sets the html defaults using the CSS `revert` property.
 
 <br/>
 
-Controlling size and resizing behavior in CSS through the specification of properties on both parent and child elements can be challenging. ⛸️ Figured Layout CSS simplifies this process by giving control to the child component for resizing within the parent. This library shares the same opinion as Figma, advocating for child components to dictate their own resizing behavior.
+Controlling size and resizing behavior in CSS through the specification of properties on both parent and child elements can be challenging. 🛌 layout-css simplifies this process by giving control to the child component for resizing within the parent. This library shares the same opinion as Figma, advocating for child components to dictate their own resizing behavior.
 
-🚨 Attention: The use of Tailwind CSS size utility classes such as h-full or w-full, h-{number}, and w-{number} may not produce expected results when combined with Figured Layout classes. This is due to the abstracted hiding complexity of setting width in flex-box, flex-direction, and grid.
+🚨 Attention: The use of Tailwind CSS size utility classes such as h-full or w-full, h-{number}, and w-{number} may not produce expected results when combined with layout-css classes. This is due to hiding complexity of setting width in flex-box, flex-direction, and grid.
 
 ### ↔️ Width
 
@@ -1050,7 +1050,7 @@ Shorthand helper class for setting the same width and height property.
 
 ##### Options
 
-Note: To make things easy and consistne t Figured layout sets css the following overrides which can be configured off if need be :
+Note: To make things easy and consistant ayout-css sets css the following overrides which can be configured off if need be :
 
 ###### Html and Body elements maximum a height and width
 
@@ -1062,7 +1062,7 @@ It can be disable by configuring one or both of the following:
 // ./tailwind.config.js
 module.exports = {
   plugins: [
-    require(@figured-layout-css/tailwindcss)({
+    require(@layout-css/tailwindcss)({
       pageHeightDefaultFill: false,  // Default TRUE
       pageWidthDefaultFill: false,   // Default TRUE
     }),
@@ -1070,56 +1070,9 @@ module.exports = {
 };
 ```
 
-###### Elements hug content for width and height by default
 
-This overrides the default block and inline behavior of elements.
 
-It can be disable by configuring one or both of the following:
 
-```javascript
-// ./tailwind.config.js
-module.exports = {
-  plugins: [
-    require(@figured-layout-css/tailwindcss)({
-      widthDefaultHug: false,     // Default TRUE
-      heightDefaultHug: false,    // Default TRUE
-    }),
-  ],
-};
-```
-
-###### Default layout
-
-This allows you to set the layout behavior of all your elements, default is set to `layout-packed-tl-y` you can change it back to the default behavior by using either
-
-- `layout-initial-html`: sets layout behavior to the default of the element.
-- `layout-revert-html`: sets layout behavior to the value the property would have had if no changes had been made by the current style orgin.
-
-```javascript
-// ./tailwind.config.js
-module.exports = {
-  plugins: [
-    require(@figured-layout-css/tailwindcss)({
-      layoutDefault: 'layout-initial-html', // Default 'layout-packed-tl-y'
-    }),
-  ],
-};
-```
-
-###### Disable all overrides
-
-Allows you to reset all the above setting to the html defaults.
-
-```javascript
-// ./tailwind.config.js
-module.exports = {
-  plugins: [
-    require(@figured-layout-css/tailwindcss)({
-      ignoreAllResets: false, // Default TRUE
-    }),
-  ],
-};
-```
 
 <br>
 
@@ -1127,9 +1080,9 @@ module.exports = {
 
 If you are interested in comparing layouts with and without check out the following Tailwind CSS play links:
 
-- ❌ [Without Figured Layout](https://) [Coming Soon]
+- ❌ [Without layout-css](https://) [Coming Soon]
 
-- ✅ [With Figured Layout](https://) [Coming Soon]
+- ✅ [With layout-css](https://) [Coming Soon]
 
 <br>
 
@@ -1148,15 +1101,3 @@ A: Short answer Yes - however we are working on a pure CSS file containing the c
 ##### Q: Why not just learn how CSS Felxbox and Grid work?
 
 A: Personally I have read the reference many times for over a decade and still don't remember which indicates these concepts as they are in the specification are intuative enough. Figma's model for thinking about layout is more intuative.
-
-<br>
-
-##### Q: What's with the name and the icon?
-
-A: It's a multifacited pun, because I really enjoy needlessly deep puns:
-
-- **Figured**
-  - In reference _Figma_ because of the inspiration from Figma's Auto Layout
-  - In reference to the shapes, structure etc
-- **Figured Layout** playing on the word of Figured Out how to lay things out in css
-- ⛸️ Ice skate becuase it alludes to figure skaters who are both elegent and precise.

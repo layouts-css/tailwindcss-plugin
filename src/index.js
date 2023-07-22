@@ -1,10 +1,9 @@
 import { withOptions } from 'tailwindcss/plugin';
 
-const figuredOutCss = withOptions((options = {}) => {
+const layoutCss = withOptions((options = {}) => {
   const defaults = {
-    ignoreAllResets: false,
     pageHeightDefaultFill: true,
-    pageWidthDefaultFill: true
+    pageWidthDefaultFill: true,
   };
 
   const _options = { ...defaults, ...options };
@@ -16,13 +15,13 @@ const figuredOutCss = withOptions((options = {}) => {
         'w-fixed': (value) => ({
           flexGrow: '0',
           flexShrink: '0',
-          width: value
+          width: value,
         }),
         'h-fixed': (value) => ({
           flexGrow: '0',
           flexShrink: '1',
-          height: value
-        })
+          height: value,
+        }),
       },
       { values: theme('space') }
     );
@@ -30,81 +29,106 @@ const figuredOutCss = withOptions((options = {}) => {
     const components = {
       'html, body': {
         width: _options.pageWidthDefaultFill ? '100%' : 'revert',
-        height: _options.pageHeightDefaultFill ? '100%' : 'revert'
+        height: _options.pageHeightDefaultFill ? '100%' : 'revert',
       },
       /* Content Sizing */
       '.w-hug': {
-        width: 'fit-content'
+        width: 'fit-content',
       },
 
       '.h-hug': {
-        height: 'fit-content'
+        height: 'fit-content',
       },
 
       '.s-hug': {
         width: 'fit-content',
-        height: 'fit-content'
+        height: 'fit-content',
       },
 
       '.w-fill': {
-        width: ['100%', '-moz-available', '-webkit-fill-available', 'fill-available']
+        width: [
+          '100%',
+          '-moz-available',
+          '-webkit-fill-available',
+          'fill-available',
+        ],
       },
 
       '* > .h-fill': {
-        height: '100%'
+        height: '100%',
       },
 
       '.layout-packed-tl-x > .h-fill, .layout-packed-tc-x > .h-fill, .layout-packed-tr-x > .h-fill, .layout-packed-ml-x > .h-fill, .layout-packed-mc-x > .h-fill, .layout-packed-mr-x > .h-fill, .layout-packed-bl-x > .h-fill, .layout-packed-bc-x > .h-fill, .layout-packed-br-x > .h-fill, .layout-spaced-t > .h-fill, .layout-spaced-m > .h-fill, .layout-spaced-b > .h-fill':
         {
           alignSelf: 'stretch',
-          flexGrow: 'auto'
+          flexGrow: 'auto',
         },
 
       '.layout-packed-tl-y > .h-fill, .layout-packed-tc-y > .h-fill, .layout-packed-tr-y > .h-fill, .layout-packed-ml-y > .h-fill, .layout-packed-mc-y > .h-fill, .layout-packed-mr-y > .h-fill, .layout-packed-bl-y > .h-fill, .layout-packed-bc-y > .h-fill, .layout-packed-br-y > .h-fill, .layout-spaced-l > .h-fill, .layout-spaced-c > .h-fill, .layout-spaced-r > .h-fill':
         {
           alignSelf: 'auto',
-          flexGrow: '1'
+          flexGrow: '1',
         },
 
       '.layout-grid-tl > .h-fill, .layout-grid-tc > .h-fill, .layout-grid-tr > .h-fill, .layout-grid-ml > .h-fill, .layout-grid-mc > .h-fill, .layout-grid-mr > .h-fill, .layout-grid-bl > .h-fill, .layout-grid-bc > .h-fill, .layout-grid-br > .h-fill':
         {
-          height: '100%'
+          height: '100%',
         },
 
       '* > .s-fill': {
         height: '100%',
-        width: ['100%', '-moz-available', '-webkit-fill-available', 'fill-available']
+        width: [
+          '100%',
+          '-moz-available',
+          '-webkit-fill-available',
+          'fill-available',
+        ],
       },
 
       '.layout-packed-tl-x > .s-fill, .layout-packed-tc-x > .s-fill, .layout-packed-tr-x > .s-fill, .layout-packed-ml-x > .s-fill, .layout-packed-mc-x > .s-fill, .layout-packed-mr-x > .s-fill, .layout-packed-bl-x > .s-fill, .layout-packed-bc-x > .s-fill, .layout-packed-br-x > .s-fill, .layout-spaced-t > .s-fill, .layout-spaced-m > .s-fill, .layout-spaced-b > .s-fill':
         {
           alignSelf: 'stretch',
           flexGrow: 'auto',
-          width: ['100%', '-moz-available', '-webkit-fill-available', 'fill-available']
+          width: [
+            '100%',
+            '-moz-available',
+            '-webkit-fill-available',
+            'fill-available',
+          ],
         },
 
       '.layout-packed-tl-y > .s-fill, .layout-packed-tc-y > .s-fill, .layout-packed-tr-y > .s-fill, .layout-packed-ml-y > .s-fill, .layout-packed-mc-y > .s-fill, .layout-packed-mr-y > .s-fill, .layout-packed-bl-y > .s-fill, .layout-packed-bc-y > .s-fill, .layout-packed-br-y > .s-fill, .layout-spaced-l > .s-fill, .layout-spaced-c > .s-fill, .layout-spaced-r > .s-fill':
         {
           alignSelf: 'auto',
           flexGrow: '1',
-          width: ['100%', '-moz-available', '-webkit-fill-available', 'fill-available']
+          width: [
+            '100%',
+            '-moz-available',
+            '-webkit-fill-available',
+            'fill-available',
+          ],
         },
 
       '.layout-grid-tl > .s-fill, .layout-grid-tc > .s-fill, .layout-grid-tr > .s-fill, .layout-grid-ml > .s-fill, .layout-grid-mc > .s-fill, .layout-grid-mr > .s-fill, .layout-grid-bl > .s-fill, .layout-grid-bc > .s-fill, .layout-grid-br > .s-fill':
         {
           height: '100%',
-          width: ['100%', '-moz-available', '-webkit-fill-available', 'fill-available']
+          width: [
+            '100%',
+            '-moz-available',
+            '-webkit-fill-available',
+            'fill-available',
+          ],
         },
 
       '.s-initial': {
         height: 'initial',
-        width: 'initial'
+        width: 'initial',
       },
       '.w-initial': {
-        width: 'initial'
+        width: 'initial',
       },
       '.h-initial': {
-        height: 'initial'
+        height: 'initial',
       },
 
       /* Layout Initial Html */
@@ -112,7 +136,7 @@ const figuredOutCss = withOptions((options = {}) => {
         display: 'initial',
         flexDirection: 'initial',
         justifyContent: 'initial',
-        alignItems: 'initial'
+        alignItems: 'initial',
       },
 
       /* Layout Revert Html */
@@ -120,7 +144,7 @@ const figuredOutCss = withOptions((options = {}) => {
         display: 'revert',
         flexDirection: 'revert',
         justifyContent: 'revert',
-        alignItems: 'revert'
+        alignItems: 'revert',
       },
 
       /* Layout Horizontally Packed  */
@@ -128,63 +152,63 @@ const figuredOutCss = withOptions((options = {}) => {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       },
 
       '.layout-packed-tc-x': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       },
 
       '.layout-packed-tr-x': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       },
 
       '.layout-packed-ml-x': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        alignItems: 'center'
+        alignItems: 'center',
       },
 
       '.layout-packed-mc-x': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       },
 
       '.layout-packed-mr-x': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        alignItems: 'center'
+        alignItems: 'center',
       },
 
       '.layout-packed-bl-x': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
       },
 
       '.layout-packed-bc-x': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
       },
 
       '.layout-packed-br-x': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
       },
 
       /* Layout Vertically Packed  */
@@ -192,63 +216,63 @@ const figuredOutCss = withOptions((options = {}) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       },
 
       '.layout-packed-tc-y': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        alignItems: 'center'
+        alignItems: 'center',
       },
 
       '.layout-packed-tr-y': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
       },
 
       '.layout-packed-ml-y': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       },
 
       '.layout-packed-mc-y': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       },
 
       '.layout-packed-mr-y': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
       },
 
       '.layout-packed-bl-y': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       },
 
       '.layout-packed-bc-y': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        alignItems: 'center'
+        alignItems: 'center',
       },
 
       '.layout-packed-br-y': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
       },
 
       /* Layout Horizontally Spaced */
@@ -256,21 +280,21 @@ const figuredOutCss = withOptions((options = {}) => {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       },
 
       '.layout-spaced-m': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
       },
 
       '.layout-spaced-b': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
       },
 
       /* Layout Vertically Spaced */
@@ -278,81 +302,81 @@ const figuredOutCss = withOptions((options = {}) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       },
 
       '.layout-spaced-c': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
       },
 
       '.layout-spaced-r': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
       },
 
       /* Layout Grid */
       '.layout-grid-tl': {
         display: 'grid',
         alignItems: 'start',
-        justifyItems: 'start'
+        justifyItems: 'start',
       },
 
       '.layout-grid-tc': {
         display: 'grid',
         alignItems: 'start',
-        justifyItems: 'center'
+        justifyItems: 'center',
       },
 
       '.layout-grid-tr': {
         display: 'grid',
         alignItems: 'start',
-        justifyItems: 'end'
+        justifyItems: 'end',
       },
 
       '.layout-grid-ml': {
         display: 'grid',
         alignItems: 'center',
-        justifyItems: 'start'
+        justifyItems: 'start',
       },
 
       '.layout-grid-mc': {
         display: 'grid',
         alignItems: 'center',
-        justifyItems: 'center'
+        justifyItems: 'center',
       },
 
       '.layout-grid-mr': {
         display: 'grid',
         alignItems: 'center',
-        justifyItems: 'end'
+        justifyItems: 'end',
       },
 
       '.layout-grid-bl': {
         display: 'grid',
         alignItems: 'end',
-        justifyItems: 'start'
+        justifyItems: 'start',
       },
 
       '.layout-grid-bc': {
         display: 'grid',
         alignItems: 'end',
-        justifyItems: 'center'
+        justifyItems: 'center',
       },
 
       '.layout-grid-br': {
         display: 'grid',
         alignItems: 'end',
-        justifyItems: 'end'
-      }
+        justifyItems: 'end',
+      },
     };
 
     addComponents(components);
   };
 });
 
-export default figuredOutCss;
+export default layoutCss;
