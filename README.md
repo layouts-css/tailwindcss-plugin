@@ -1,27 +1,27 @@
 # 🛌 @layout-css/tailwindcss-plugin
 
-## Easy-to-understand layout classes modeled after Figma's Auto Layout combined with the power of Tailwind CSS
+> Easy-to-understand layout classes for css, inspired by Figma's Auto Layout and repeatedly having to figure out common website layouts. Combined with the power of Tailwind CSS
 
 |
 [Getting Started](#getting-started) |
+[Key Concepts](#key-concepts) |
 [Usage](#usage) |
-[Layout and Alignment](#layout-and-alignment) |
-[Component Sizing](#component-resizing) |
-[Options](#options) |
+[Single Panel Layout](#single-panel-layout-classes) |
+[Sizing Layout](#sizing-layout-classes) |
+[Tailwind CSS Plugin Options](#tailwindcss-plugin-options) |
 [Demo]() |
 [FAQs]() |
 
-Say goodbye to flexbox or grid headaches and create HTML layouts with ease!
+Sleep like a baby and kiss those flexbox & CSS grid nightmares goodbye! Rest well, as you effortlessly create HTML layouts without a worry!
 
-Yes - you can center a div with ease 😉.
+Yes - you can center a div with ease 😌
 
-layout-css makes it a breeze to layout you HTML with it's easy-to-understand CSS layout classes, modeled after Figma's Auto Layout.
-As a Tailwind CSS plugin, you can combine Layout's intuitive layout classes with the power of Tailwind CSS.
+layout-css makes it a breeze to layout HTML with it's easy-to-understand CSS layout classes. As a Tailwind CSS plugin, you can combine layout-css's intuitive layout classes with the power of Tailwind CSS.
 <br/>
 
 <hr/>
 
-#### Getting Started
+## Getting Started
 
 ℹ️ This guide assume you have Tailwind already setup and configured.
 
@@ -33,7 +33,6 @@ As a Tailwind CSS plugin, you can combine Layout's intuitive layout classes with
 
 ```js
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   plugins: [require('@layout-css/tailwindcss')],
 };
@@ -52,7 +51,7 @@ module.exports = {
 <br/>
 <br/>
 
-#### Add a sizing class
+#### Add a sizing layout class
 
 <!-- prettier-ignore -->
 ```html
@@ -69,14 +68,53 @@ module.exports = {
 <br/>
 <br/>
 
-#### Default behavior
-
-- Elements without a layout class will respect default html block & inline element behavior.
-- `body` & `html` both have `width` and `height` set to `100%`
-
 <hr/>
 
-#### Usage
+## Key Concepts
+
+layout-css builds on the idea of utility-first classes popularised by [Tailwind CSS](https://tailwindcss.com/) and introduces the concept of layout classes. The diference is that utility-first clasess wrap a single concept in css where as the a layout class wraps multiple to achive an intent.
+
+### Sizing Layout Classes
+
+Sizing layout classes describe the desired behavior of the dimensions (width & hieght) of an element regardsless of the parent layout class:
+
+- **fill**: width and/or height in parent
+- **hug**: the contents of the child content along the width add/or heigh
+- **fixed**: the size of the element along the width and/or height
+
+### Single-Panel Layout Classes
+
+Single-panel layout clasess decribe how the child elements behave in the container bases on the following properties:
+
+#### Single Axis (x or y)
+
+> **💡 TIP** single axis layouts map directly to the [_Auto-Layout_](https://help.figma.com/hc/en-us/articles/5731482952599-Using-auto-layout) features in the popular design tool [![figma-logo](https://github.com/layout-css/.github/assets/1035439/772f3948-9167-477b-97ec-79253a397ec1)](https://figma.com)
+> and is the inspiration for this library. For each implementation of layout-css the docs will specify how the class maps to Figma Auto-Layout controls.
+
+- spacing: packed together or spaced apart
+- **horizontal-alignment**: of child elements in the parent container<br/>
+  (left, center, or right)
+- **vertical-alignment**: of child elements in the parent container<br/>
+  (top, middle, bottom)
+- **axis**: x or y the child elments are layed out along.
+
+#### Grid (x & y)
+
+- **horizontal-alignment**: of child elements within the cells of the grid<br/>
+  (left, center, or right)
+- **vertical-alignmen**t: of child elements within the cells of the grid<br/>
+  (top, middle, bottom)
+
+### 🚧 Responsive-Multi-Panel Layout Classes
+
+_Coming soon_
+Responsisve-mulit-panel layout classes describe the behaviours commonly seen on websites across the web and how they behave across the different form factors.
+
+- headers & navigation
+- content, columns and side bars
+- footers
+
+## Usage
 
 ### Control the layout and how the child components resize
 
@@ -84,18 +122,18 @@ Figma is a popular tool for designing websites and apps. The Auto Layout Feature
 
 The folloing image features the Auto Layout controls in Figma. The table details what can be done out-of-the box with Tailwind CSS and where the layout-css is required.
 
-![Figma Controls](/docs/images/figma-control/explaination.png)
+![Figma Controls](docs/images/figma-control/explaination.png)
 
 | Figma Control                                                                             | CSS Approach                                                                 |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| <span style="color:">1.a.</span> Horizontal resizing <br> 1.b. Verical resizing           | @layout-css/tailwindcss <br>[Figma Component Resizing](#sizing)              |
+| <span style="color:">1.a.</span> Horizontal resizing <br> 1.b. Verical resizing           | @layout-css/tailwindcss-plugin <br>[Figma Component Resizing](#sizing)       |
 | 2. Corner radius                                                                          | Tailwind CSS <br>[Border Radius](https://tailwindcss.com/docs/border-radius) |
 | 3. Visability if overflow                                                                 | Tailwind CSS <br>[Overflow](https://tailwindcss.com/docs/overflow)           |
-| 4.a. Direction child components flow <br> 4.b. Alignment of child components in container | @layout-css/tailwindcss <br> [Figma Component Alignment](#sizing)            |
+| 4.a. Direction child components flow <br> 4.b. Alignment of child components in container | @layout-css/tailwindcss-plugin <br> [Figma Component Alignment](#sizing)     |
 | 5. Space between child components                                                         | Tailwind CSS <br> [Gap](https://tailwindcss.com/docs/gap)                    |
 | 6.a. Horizontal padding, 6.b. Vertical padding                                            | Tailwind CSS <br> [Padding](https://tailwindcss.com/docs/padding)            |
 
-##### Example
+### Example
 
 The image below is controled by the html below.
 
@@ -114,15 +152,15 @@ The image below is controled by the html below.
 
 <br/>
 
-#### Layout and Alignment
-
-<hr>
+## Single Panel Layout Classes
 
 ### Layout Class Structure
 
 A layout class is made up of up to two parts `LayoutType-AlignmentType` e.g. `layout-packed-tl-x`
 
-#### Layout Types
+<br/>
+
+### Layout Properties
 
 `layout-packed`: packs the child elemnts together in the container.
 
@@ -130,7 +168,9 @@ A layout class is made up of up to two parts `LayoutType-AlignmentType` e.g. `la
 
 `layout-grid`: spaces the child elements within the cell of a grid.
 
-#### Alignment Types
+<br/>
+
+### Alignment Properties
 
 `layout-packed-[horizontal][vertical]-[axis]` has three properties: horizontal alignment, vertical alignment and axis
 
@@ -150,13 +190,13 @@ A layout class is made up of up to two parts `LayoutType-AlignmentType` e.g. `la
 <br/>
 <br/>
 
-### Layouts Classes
+### Single Axis Layouts Classes
 
 #### 📐 Layout: Packed Top-Left across the X-axis
 
 Use `layout-packed-tl-x` to align child elements at the top left of the container with them packed together.
 
-![Example of layout-packed-tl-x](/docs/images/layout-example/layout-packed-tl-x.png)
+![Example of layout-packed-tl-x](docs/images/layout-example/layout-packed-tl-x.png)
 
 ##### HTML
 
@@ -180,7 +220,7 @@ Use `layout-packed-tl-x` to align child elements at the top left of the containe
 
 Use `layout-packed-tc-x` to align child elements at the top center of the container with them packed together.
 
-![Example of layout-packed-tc-x](/docs/images/layout-example/layout-packed-tc-x.png)
+![Example of layout-packed-tc-x](docs/images/layout-example/layout-packed-tc-x.png)
 
 ##### HTML
 
@@ -204,7 +244,7 @@ Use `layout-packed-tc-x` to align child elements at the top center of the contai
 
 Use `layout-packed-tr-x` to align child elements at the top right of the container with them packed together.
 
-![Example of layout-packed-tr-x](/docs/images/layout-example/layout-packed-tr-x.png)
+![Example of layout-packed-tr-x](docs/images/layout-example/layout-packed-tr-x.png)
 
 ##### HTML
 
@@ -228,7 +268,7 @@ Use `layout-packed-tr-x` to align child elements at the top right of the contain
 
 Use `layout-packed-ml-x` to align child elements at the middle left of the container with them packed together.
 
-![Example of layout-packed-ml-x](/docs/images/layout-example/layout-packed-ml-x.png)
+![Example of layout-packed-ml-x](docs/images/layout-example/layout-packed-ml-x.png)
 
 ##### HTML
 
@@ -252,7 +292,7 @@ Use `layout-packed-ml-x` to align child elements at the middle left of the conta
 
 Use `layout-packed-mc-x` to align child elements at the middle center of the container with them packed together.
 
-![Example of layout-packed-mc-x](/docs/images/layout-example/layout-packed-mc-x.png)
+![Example of layout-packed-mc-x](docs/images/layout-example/layout-packed-mc-x.png)
 
 ##### HTML
 
@@ -276,7 +316,7 @@ Use `layout-packed-mc-x` to align child elements at the middle center of the con
 
 Use `layout-packed-mr-x` to align child elements at the middle right of the container with them packed together.
 
-![Example of layout-packed-mr-x](/docs/images/layout-example/layout-packed-mr-x.png)
+![Example of layout-packed-mr-x](docs/images/layout-example/layout-packed-mr-x.png)
 
 ##### HTML
 
@@ -300,7 +340,7 @@ Use `layout-packed-mr-x` to align child elements at the middle right of the cont
 
 Use `layout-packed-bl-x` to align child elements at the bottom left of the container with them packed together.
 
-![Example of layout-packed-bl-x](/docs/images/layout-example/layout-packed-bl-x.png)
+![Example of layout-packed-bl-x](docs/images/layout-example/layout-packed-bl-x.png)
 
 ##### HTML
 
@@ -324,7 +364,7 @@ Use `layout-packed-bl-x` to align child elements at the bottom left of the conta
 
 Use `layout-packed-bc-x` to align child elements at the bottom center of the container with them packed together.
 
-![Example of layout-packed-bc-x](/docs/images/layout-example/layout-packed-bc-x.png)
+![Example of layout-packed-bc-x](docs/images/layout-example/layout-packed-bc-x.png)
 
 ##### HTML
 
@@ -348,7 +388,7 @@ Use `layout-packed-bc-x` to align child elements at the bottom center of the con
 
 Use `layout-packed-br-x` to align child elements at the bottom right of the container with them packed together.
 
-![Example of layout-packed-br-x](/docs/images/layout-example/layout-packed-br-x.png)
+![Example of layout-packed-br-x](docs/images/layout-example/layout-packed-br-x.png)
 
 ##### HTML
 
@@ -372,7 +412,7 @@ Use `layout-packed-br-x` to align child elements at the bottom right of the cont
 
 Use `layout-packed-tl-y` to align child elements at the top left of the container with them packed together.
 
-![Example of layout-packed-tl-y](/docs/images/layout-example/layout-packed-tl-y.png)
+![Example of layout-packed-tl-y](docs/images/layout-example/layout-packed-tl-y.png)
 
 ##### HTML
 
@@ -396,7 +436,7 @@ Use `layout-packed-tl-y` to align child elements at the top left of the containe
 
 Use `layout-packed-tc-y` to align child elements at the top center of the container with them packed together.
 
-![Example of layout-packed-tc-y](/docs/images/layout-example/layout-packed-tc-y.png)
+![Example of layout-packed-tc-y](docs/images/layout-example/layout-packed-tc-y.png)
 
 ##### HTML
 
@@ -420,7 +460,7 @@ Use `layout-packed-tc-y` to align child elements at the top center of the contai
 
 Use `layout-packed-tr-y` to align child elements at the top right of the container with them packed together.
 
-![Example of layout-packed-tr-y](/docs/images/layout-example/layout-packed-tr-y.png)
+![Example of layout-packed-tr-y](docs/images/layout-example/layout-packed-tr-y.png)
 
 ##### HTML
 
@@ -444,7 +484,7 @@ Use `layout-packed-tr-y` to align child elements at the top right of the contain
 
 Use `layout-packed-ml-y` to align child elements at the middle left of the container with them packed together.
 
-![Example of layout-packed-ml-y](/docs/images/layout-example/layout-packed-ml-y.png)
+![Example of layout-packed-ml-y](docs/images/layout-example/layout-packed-ml-y.png)
 
 ##### HTML
 
@@ -468,7 +508,7 @@ Use `layout-packed-ml-y` to align child elements at the middle left of the conta
 
 Use `layout-packed-mc-y` to align child elements at the middle center of the container with them packed together.
 
-![Example of layout-packed-mc-y](/docs/images/layout-example/layout-packed-mc-y.png)
+![Example of layout-packed-mc-y](docs/images/layout-example/layout-packed-mc-y.png)
 
 ##### HTML
 
@@ -492,7 +532,7 @@ Use `layout-packed-mc-y` to align child elements at the middle center of the con
 
 Use `layout-packed-mr-y` to align child elements at the middle right of the container with them packed together.
 
-![Example of layout-packed-mr-y](/docs/images/layout-example/layout-packed-mr-y.png)
+![Example of layout-packed-mr-y](docs/images/layout-example/layout-packed-mr-y.png)
 
 ##### HTML
 
@@ -516,7 +556,7 @@ Use `layout-packed-mr-y` to align child elements at the middle right of the cont
 
 Use `layout-packed-bl-y` to align child elements at the bottom left of the container with them packed together.
 
-![Example of layout-packed-bl-y](/docs/images/layout-example/layout-packed-bl-y.png)
+![Example of layout-packed-bl-y](docs/images/layout-example/layout-packed-bl-y.png)
 
 ##### HTML
 
@@ -540,7 +580,7 @@ Use `layout-packed-bl-y` to align child elements at the bottom left of the conta
 
 Use `layout-packed-bc-y` to align child elements at the bottom center of the container with them packed together.
 
-![Example of layout-packed-bc-y](/docs/images/layout-example/layout-packed-bc-y.png)
+![Example of layout-packed-bc-y](docs/images/layout-example/layout-packed-bc-y.png)
 
 ##### HTML
 
@@ -564,7 +604,7 @@ Use `layout-packed-bc-y` to align child elements at the bottom center of the con
 
 Use `layout-packed-br-y` to align child elements at the bottom right of the container with them packed together.
 
-![Example of layout-packed-br-y](/docs/images/layout-example/layout-packed-br-y.png)
+![Example of layout-packed-br-y](docs/images/layout-example/layout-packed-br-y.png)
 
 ##### HTML
 
@@ -588,7 +628,7 @@ Use `layout-packed-br-y` to align child elements at the bottom right of the cont
 
 Use `layout-spaced-l` to space child elements down along the left of the container.
 
-![Example of layout-spaced-l](/docs/images/layout-example/layout-spaced-l.png)
+![Example of layout-spaced-l](docs/images/layout-example/layout-spaced-l.png)
 
 ##### HTML
 
@@ -612,7 +652,7 @@ Use `layout-spaced-l` to space child elements down along the left of the contain
 
 Use `layout-spaced-c` to space child elements down along the center of the container.
 
-![Example of layout-spaced-c](/docs/images/layout-example/layout-spaced-c.png)
+![Example of layout-spaced-c](docs/images/layout-example/layout-spaced-c.png)
 
 ##### HTML
 
@@ -636,7 +676,7 @@ Use `layout-spaced-c` to space child elements down along the center of the conta
 
 Use `layout-spaced-r` to space child elements down along the right of the container.
 
-![Example of layout-spaced-r](/docs/images/layout-example/layout-spaced-r.png)
+![Example of layout-spaced-r](docs/images/layout-example/layout-spaced-r.png)
 
 ##### HTML
 
@@ -660,7 +700,7 @@ Use `layout-spaced-r` to space child elements down along the right of the contai
 
 Use `layout-spaced-t` to space child elements across the top of the container.
 
-![Example of layout-spaced-t](/docs/images/layout-example/layout-spaced-t.png)
+![Example of layout-spaced-t](docs/images/layout-example/layout-spaced-t.png)
 
 ##### HTML
 
@@ -684,7 +724,7 @@ Use `layout-spaced-t` to space child elements across the top of the container.
 
 Use `layout-spaced-m` to space child elements across the middle of the container.
 
-![Example of layout-spaced-m](/docs/images/layout-example/layout-spaced-m.png)
+![Example of layout-spaced-m](docs/images/layout-example/layout-spaced-m.png)
 
 ##### HTML
 
@@ -708,7 +748,7 @@ Use `layout-spaced-m` to space child elements across the middle of the container
 
 Use `layout-spaced-b` to space child elements across the bottom of the container.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-spaced-b.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-spaced-b.png)
 
 ##### HTML
 
@@ -734,11 +774,13 @@ Figma doesn't have a capability for Grids in Auto Layout - this is my attempt at
 <br>
 <br>
 
+### Grid Layout Classes
+
 #### 📐 Layout: Grid with items in the cell's Top Left
 
 Use `layout-grid-tl` to align child elements at the top left of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-tl.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-tl.png)
 
 ##### HTML
 
@@ -764,7 +806,7 @@ Use `layout-grid-tl` to align child elements at the top left of each cell in the
 
 Use `layout-grid-tc` to align child elements at the top center of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-tc.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-tc.png)
 
 ##### HTML
 
@@ -790,7 +832,7 @@ Use `layout-grid-tc` to align child elements at the top center of each cell in t
 
 Use `layout-grid-tr` to align child elements at the top right of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-tr.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-tr.png)
 
 ##### HTML
 
@@ -816,7 +858,7 @@ Use `layout-grid-tr` to align child elements at the top right of each cell in th
 
 Use `layout-grid-ml` to align child elements at the middle left of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-ml.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-ml.png)
 
 ##### HTML
 
@@ -842,7 +884,7 @@ Use `layout-grid-ml` to align child elements at the middle left of each cell in 
 
 Use `layout-grid-mc` to align child elements at the middle center of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-mc.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-mc.png)
 
 ##### HTML
 
@@ -868,7 +910,7 @@ Use `layout-grid-mc` to align child elements at the middle center of each cell i
 
 Use `layout-grid-mr` to align child elements at the middle right of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-mr.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-mr.png)
 
 ##### HTML
 
@@ -894,7 +936,7 @@ Use `layout-grid-mr` to align child elements at the middle right of each cell in
 
 Use `layout-grid-bc` to align child elements at the bottom left of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-bl.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-bl.png)
 
 ##### HTML
 
@@ -920,7 +962,7 @@ Use `layout-grid-bc` to align child elements at the bottom left of each cell in 
 
 Use `layout-grid-bc` to align child elements at the bottom center of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-bc.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-bc.png)
 
 ##### HTML
 
@@ -946,7 +988,7 @@ Use `layout-grid-bc` to align child elements at the bottom center of each cell i
 
 Use `layout-grid-br` to align child elements at the bottom right of each cell in the grid.
 
-![Example of layout-spaced-b](/docs/images/layout-example/layout-grid-br.png)
+![Example of layout-spaced-b](docs/images/layout-example/layout-grid-br.png)
 
 ##### HTML
 
@@ -967,6 +1009,8 @@ Use `layout-grid-br` to align child elements at the bottom right of each cell in
 
 <br/>
 
+### Layout Helpers
+
 #### 📐 Layout: Inital HTML
 
 Use `layout-initial-html` sets the html defaults using the CSS `inital` property.
@@ -980,13 +1024,15 @@ Use `layout-revert-html` sets the html defaults using the CSS `revert` property.
 <br/>
 <hr/>
 
-##### Component Resizing
+## Sizing Layout Classes
 
 <br/>
 
 Controlling size and resizing behavior in CSS through the specification of properties on both parent and child elements can be challenging. 🛌 layout-css simplifies this process by giving control to the child component for resizing within the parent. This library shares the same opinion as Figma, advocating for child components to dictate their own resizing behavior.
 
-🚨 Attention: The use of Tailwind CSS size utility classes such as h-full or w-full, h-{number}, and w-{number} may not produce expected results when combined with layout-css classes. This is due to hiding complexity of setting width in flex-box, flex-direction, and grid.
+> 🚨 Attention: The use of Tailwind CSS size utility classes such as h-full or w-full, h-{number}, and w-{number} may not produce expected results when combined with layout-css classes. This is due to hiding complexity of setting width in flex-box, flex-direction, and grid.
+
+<br/>
 
 ### ↔️ Width
 
@@ -1011,6 +1057,8 @@ Controlling size and resizing behavior in CSS through the specification of prope
   <div class="w-fixed-[160px] h-hug">w-fixed-[160px]</div>
 </div>
 ```
+
+<br/>
 
 ### ↕ Height
 
@@ -1048,11 +1096,13 @@ Shorthand helper class for setting the same width and height property.
 
 <br/>
 
-##### Options
+## Tailwind CSS Plugin Options
 
 Note: To ensure height and width work consistantly layout-css sets the following overrides which can be turned off if need be :
 
-###### Html and Body elements maximum a height and width
+<br/>
+
+### Html and Body elements maximum a height and width
 
 In most cases it's desirable to have the top most elements fill the entire viewport.
 
@@ -1072,28 +1122,39 @@ module.exports = {
 
 <br>
 
-#### Demo
+### Default behavior
+
+- Elements without a layout class will respect default html block & inline element behavior.
+- `body` & `html` both have `width` and `height` set to `100%`
+
+<br/>
+
+## Demo
 
 If you are interested in comparing layouts with and without check out the following Tailwind CSS play links:
 
-- ❌ [Without layout-css](https://) [Coming Soon]
+- ❌ [Without layout-css](https://) **🚧 Coming Soon**
 
-- ✅ [With layout-css](https://) [Coming Soon]
+- ✅ [With layout-css](https://) **🚧 Coming Soon**
 
 <br>
 
-#### FAQs
+## FAQs
 
 This is a list of questions so far. Join the [Tailwind Discord]("https://tailwindcss.com/discord") for more and to share your ideas and feedback in the plugins channel.
 
 <br>
 
-##### Q: Do I need Tailwind CSS to use this plugin?
+##### Q: Do I need Tailwind CSS to use this layout-css?
 
-A: Short answer Yes - however we are working on a pure CSS file containing the core concepts
+A: Hopefully not for long
+_**🚧 Coming soon**_
+
+- [@layout-css/plain-css](https://github.com/layout-css/plain-css)
+- [@layout-css/vanilla-extract](https://github.com/layout-css/vanilla-extract) (CSS in JS/TS)
 
 <br>
 
 ##### Q: Why not just learn how CSS Felxbox and Grid work?
 
-A: Personally I have read the reference many times for over a decade and still don't remember which indicates these concepts as they are in the specification are intuative enough. Figma's model for thinking about layout is more intuative.
+A: How many times have you read the reference and still not remember how it works... this indicates these concepts as they are in the CSS specification aren't intuitive enough. Figma's model for thinking about layout is more intuitive.
