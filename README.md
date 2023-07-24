@@ -1,4 +1,4 @@
-# 🛌 @layout-css/tailwindcss-plugin
+# 🛌 @layouts-css/tailwindcss-plugin
 
 > Easy-to-understand layout classes for css, inspired by Figma's Auto Layout and repeatedly having to figure out common website layouts. Combined with the power of Tailwind CSS
 
@@ -16,7 +16,7 @@ Sleep like a baby and kiss those flexbox & CSS grid nightmares goodbye! Rest wel
 
 Yes - you can center a div with ease 😌
 
-layout-css makes it a breeze to layout HTML with it's easy-to-understand CSS layout classes. As a Tailwind CSS plugin, you can combine layout-css's intuitive layout classes with the power of Tailwind CSS.
+layouts-css makes it a breeze to layout HTML with it's easy-to-understand CSS layout classes. As a Tailwind CSS plugin, you can combine layouts-css's intuitive layout classes with the power of Tailwind CSS.
 <br/>
 
 <hr/>
@@ -27,14 +27,14 @@ layout-css makes it a breeze to layout HTML with it's easy-to-understand CSS lay
 
 #### Install package
 
-`npm i -D @layout-css/tailwindcss`
+`npm i -D @layouts-css/tailwindcss`
 
 #### Add plugin to your tailwind.config.js
 
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  plugins: [require('@layout-css/tailwindcss')],
+  plugins: [require('@layouts-css/tailwindcss')],
 };
 ```
 
@@ -72,7 +72,7 @@ module.exports = {
 
 ## Key Concepts
 
-layout-css builds on the idea of utility-first classes popularised by [Tailwind CSS](https://tailwindcss.com/) and introduces the concept of layout classes. The diference is that utility-first clasess wrap a single concept in css where as the a layout class wraps multiple to achive an intent.
+layouts-css builds on the idea of utility-first classes popularised by [Tailwind CSS](https://tailwindcss.com/) and introduces the concept of layout classes. The diference is that utility-first clasess wrap a single concept in css where as the a layout class wraps multiple to achive an intent.
 
 ### Sizing Layout Classes
 
@@ -88,8 +88,8 @@ Single-panel layout clasess decribe how the child elements behave in the contain
 
 #### Single Axis (x or y)
 
-> **💡 TIP** single axis layouts map directly to the [_Auto-Layout_](https://help.figma.com/hc/en-us/articles/5731482952599-Using-auto-layout) features in the popular design tool [![figma-logo](https://github.com/layout-css/.github/assets/1035439/772f3948-9167-477b-97ec-79253a397ec1)](https://figma.com)
-> and is the inspiration for this library. For each implementation of layout-css the docs will specify how the class maps to Figma Auto-Layout controls.
+> **💡 TIP** single axis layouts map directly to the [_Auto-Layout_](https://help.figma.com/hc/en-us/articles/5731482952599-Using-auto-layout) features in the popular design tool [![figma-logo](https://github.com/layouts-css/.github/assets/1035439/772f3948-9167-477b-97ec-79253a397ec1)](https://figma.com)
+> and is the inspiration for this library. For each implementation of layouts-css the docs will specify how the class maps to Figma Auto-Layout controls.
 
 - spacing: packed together or spaced apart
 - **horizontal-alignment**: of child elements in the parent container<br/>
@@ -120,16 +120,16 @@ Responsisve-mulit-panel layout classes describe the behaviours commonly seen on 
 
 Figma is a popular tool for designing websites and apps. The Auto Layout Feature dyanmically arranges elements on the page so you don't have to manually position everything when resizing a component.
 
-The folloing image features the Auto Layout controls in Figma. The table details what can be done out-of-the box with Tailwind CSS and where the layout-css is required.
+The folloing image features the Auto Layout controls in Figma. The table details what can be done out-of-the box with Tailwind CSS and where the layouts-css is required.
 
 ![Figma Controls](docs/images/figma-control/explaination.png)
 
 | Figma Control                                                                             | CSS Approach                                                                 |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| <span style="color:">1.a.</span> Horizontal resizing <br> 1.b. Verical resizing           | @layout-css/tailwindcss-plugin <br>[Figma Component Resizing](#sizing)       |
+| <span style="color:">1.a.</span> Horizontal resizing <br> 1.b. Verical resizing           | @layouts-css/tailwindcss-plugin <br>[Figma Component Resizing](#sizing)      |
 | 2. Corner radius                                                                          | Tailwind CSS <br>[Border Radius](https://tailwindcss.com/docs/border-radius) |
 | 3. Visability if overflow                                                                 | Tailwind CSS <br>[Overflow](https://tailwindcss.com/docs/overflow)           |
-| 4.a. Direction child components flow <br> 4.b. Alignment of child components in container | @layout-css/tailwindcss-plugin <br> [Figma Component Alignment](#sizing)     |
+| 4.a. Direction child components flow <br> 4.b. Alignment of child components in container | @layouts-css/tailwindcss-plugin <br> [Figma Component Alignment](#sizing)    |
 | 5. Space between child components                                                         | Tailwind CSS <br> [Gap](https://tailwindcss.com/docs/gap)                    |
 | 6.a. Horizontal padding, 6.b. Vertical padding                                            | Tailwind CSS <br> [Padding](https://tailwindcss.com/docs/padding)            |
 
@@ -1028,9 +1028,9 @@ Use `layout-revert-html` sets the html defaults using the CSS `revert` property.
 
 <br/>
 
-Controlling size and resizing behavior in CSS through the specification of properties on both parent and child elements can be challenging. 🛌 layout-css simplifies this process by giving control to the child component for resizing within the parent. This library shares the same opinion as Figma, advocating for child components to dictate their own resizing behavior.
+Controlling size and resizing behavior in CSS through the specification of properties on both parent and child elements can be challenging. 🛌 layouts-css simplifies this process by giving control to the child component for resizing within the parent. This library shares the same opinion as Figma, advocating for child components to dictate their own resizing behavior.
 
-> 🚨 Attention: The use of Tailwind CSS size utility classes such as h-full or w-full, h-{number}, and w-{number} may not produce expected results when combined with layout-css classes. This is due to hiding complexity of setting width in flex-box, flex-direction, and grid.
+> 🚨 Attention: The use of Tailwind CSS size utility classes such as h-full or w-full, h-{number}, and w-{number} may not produce expected results when combined with layouts-css classes. This is due to hiding complexity of setting width in flex-box, flex-direction, and grid.
 
 <br/>
 
@@ -1098,7 +1098,7 @@ Shorthand helper class for setting the same width and height property.
 
 ## Tailwind CSS Plugin Options
 
-Note: To ensure height and width work consistantly layout-css sets the following overrides which can be turned off if need be :
+Note: To ensure height and width work consistantly layouts-css sets the following overrides which can be turned off if need be :
 
 <br/>
 
@@ -1112,7 +1112,7 @@ It can be disable by configuring one or both of the following:
 // ./tailwind.config.js
 module.exports = {
   plugins: [
-    require(@layout-css/tailwindcss)({
+    require(@layouts-css/tailwindcss)({
       pageHeightDefaultFill: false,  // Default TRUE
       pageWidthDefaultFill: false,   // Default TRUE
     }),
@@ -1133,9 +1133,9 @@ module.exports = {
 
 If you are interested in comparing layouts with and without check out the following Tailwind CSS play links:
 
-- ❌ [Without layout-css](https://) **🚧 Coming Soon**
+- ❌ [Without layouts-css](https://) **🚧 Coming Soon**
 
-- ✅ [With layout-css](https://) **🚧 Coming Soon**
+- ✅ [With layouts-css](https://) **🚧 Coming Soon**
 
 <br>
 
@@ -1145,13 +1145,13 @@ This is a list of questions so far. Join the [Tailwind Discord]("https://tailwin
 
 <br>
 
-##### Q: Do I need Tailwind CSS to use this layout-css?
+##### Q: Do I need Tailwind CSS to use this layouts-css?
 
 A: Hopefully not for long
 _**🚧 Coming soon**_
 
-- [@layout-css/plain-css](https://github.com/layout-css/plain-css)
-- [@layout-css/vanilla-extract](https://github.com/layout-css/vanilla-extract) (CSS in JS/TS)
+- [@layouts-css/plain-css](https://github.com/layouts-css/plain-css)
+- [@layouts-css/vanilla-extract](https://github.com/layouts-css/vanilla-extract) (CSS in JS/TS)
 
 <br>
 

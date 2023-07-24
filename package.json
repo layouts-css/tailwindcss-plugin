@@ -1,9 +1,9 @@
 {
-  "name": "@layout-css/tailwindcss-plugin",
+  "name": "@layouts-css/tailwindcss-plugin",
   "version": "0.0.2",
   "main": "src/index.js",
   "types": "src/index.d.ts",
-  "repository": "https://github.com/layout-css/tailwindcss-plugin",
+  "repository": "https://github.com/layouts-css/tailwindcss-plugin",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
