@@ -1,4 +1,4 @@
-import { withOptions } from 'tailwindcss/plugin';
+const { withOptions } = require('tailwindcss/plugin');
 
 const layoutCss = withOptions((options = {}) => {
   const defaults = {
