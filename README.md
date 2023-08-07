@@ -64,7 +64,7 @@ module.exports = {
 
 🎉 The above displays at full screen height and width with a 96px x 96px centered div. 🎉
 
-**Note:** Sizing classes are designed to work anywhere regarless of whether or not a layout class is present on the parent element.
+**Note:** Sizing classes are designed to work anywhere regardless of whether or not a layout class is present on the parent element.
 <br/>
 <br/>
 
@@ -72,11 +72,11 @@ module.exports = {
 
 ## Key Concepts
 
-layouts-css builds on the idea of utility-first classes popularised by [Tailwind CSS](https://tailwindcss.com/) and introduces the concept of layout classes. The diference is that utility-first clasess wrap a single concept in css where as the a layout class wraps multiple to achive an intent.
+layouts-css builds on the idea of utility-first classes popularised by [Tailwind CSS](https://tailwindcss.com/) and introduces the concept of layout classes. The difference is that utility-first classes wrap a single concept in css where as the a layout class wraps multiple to achieve an intent.
 
 ### Sizing Layout Classes
 
-Sizing layout classes describe the desired behavior of the dimensions (width & hieght) of an element regardsless of the parent layout class:
+Sizing layout classes describe the desired behavior of the dimensions (width & height) of an element regardless of the parent layout class:
 
 - **fill**: width and/or height in parent
 - **hug**: the contents of the child content along the width add/or heigh
@@ -84,7 +84,7 @@ Sizing layout classes describe the desired behavior of the dimensions (width & h
 
 ### Single-Panel Layout Classes
 
-Single-panel layout clasess decribe how the child elements behave in the container bases on the following properties:
+Single-panel layout classes describe how the child elements behave in the container bases on the following properties:
 
 #### Single Axis (x or y)
 
@@ -96,19 +96,19 @@ Single-panel layout clasess decribe how the child elements behave in the contain
   (left, center, or right)
 - **vertical-alignment**: of child elements in the parent container<br/>
   (top, middle, bottom)
-- **axis**: x or y the child elments are layed out along.
+- **axis**: x or y the child elements are layed out along.
 
 #### Grid (x & y)
 
 - **horizontal-alignment**: of child elements within the cells of the grid<br/>
   (left, center, or right)
-- **vertical-alignmen**t: of child elements within the cells of the grid<br/>
+- **vertical-alignment**: of child elements within the cells of the grid<br/>
   (top, middle, bottom)
 
 ### 🚧 Responsive-Multi-Panel Layout Classes
 
 _Coming soon_
-Responsisve-mulit-panel layout classes describe the behaviours commonly seen on websites across the web and how they behave across the different form factors.
+Responsive-multi-panel layout classes describe the behaviours commonly seen on websites across the web and how they behave across the different form factors.
 
 - headers & navigation
 - content, columns and side bars
@@ -118,24 +118,24 @@ Responsisve-mulit-panel layout classes describe the behaviours commonly seen on 
 
 ### Control the layout and how the child components resize
 
-Figma is a popular tool for designing websites and apps. The Auto Layout Feature dyanmically arranges elements on the page so you don't have to manually position everything when resizing a component.
+Figma is a popular tool for designing websites and apps. The Auto Layout Feature dynamically arranges elements on the page so you don't have to manually position everything when resizing a component.
 
-The folloing image features the Auto Layout controls in Figma. The table details what can be done out-of-the box with Tailwind CSS and where the layouts-css is required.
+The following image features the Auto Layout controls in Figma. The table details what can be done out-of-the box with Tailwind CSS and where the layouts-css is required.
 
 ![Figma Controls](docs/images/figma-control/explanation.png)
 
 | Figma Control                                                                             | CSS Approach                                                                 |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| <span style="color:">1.a.</span> Horizontal resizing <br> 1.b. Verical resizing           | @layouts-css/tailwindcss-plugin <br>[Figma Component Resizing](#sizing)      |
+| <span style="color:">1.a.</span> Horizontal resizing <br> 1.b. Vertical resizing          | @layouts-css/tailwindcss-plugin <br>[Figma Component Resizing](#sizing)      |
 | 2. Corner radius                                                                          | Tailwind CSS <br>[Border Radius](https://tailwindcss.com/docs/border-radius) |
-| 3. Visability if overflow                                                                 | Tailwind CSS <br>[Overflow](https://tailwindcss.com/docs/overflow)           |
+| 3. Visibility if overflow                                                                 | Tailwind CSS <br>[Overflow](https://tailwindcss.com/docs/overflow)           |
 | 4.a. Direction child components flow <br> 4.b. Alignment of child components in container | @layouts-css/tailwindcss-plugin <br> [Figma Component Alignment](#sizing)    |
 | 5. Space between child components                                                         | Tailwind CSS <br> [Gap](https://tailwindcss.com/docs/gap)                    |
 | 6.a. Horizontal padding, 6.b. Vertical padding                                            | Tailwind CSS <br> [Padding](https://tailwindcss.com/docs/padding)            |
 
 ### Example
 
-The image below is controled by the html below.
+The image below is controlled by the html below.
 
 ![Example](docs/images/layout-example/explanation.png)
 
@@ -162,9 +162,9 @@ A layout class is made up of up to two parts `LayoutType-AlignmentType` e.g. `la
 
 ### Layout Properties
 
-`layout-packed`: packs the child elemnts together in the container.
+`layout-packed`: packs the child elements together in the container.
 
-`layout-spaced`: spaces the child elemnts across the full width of the container.
+`layout-spaced`: spaces the child elements across the full width of the container.
 
 `layout-grid`: spaces the child elements within the cell of a grid.
 
@@ -211,7 +211,7 @@ Use `layout-packed-tl-x` to align child elements at the top left of the containe
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-tl-x](docs/images/figma-control/layout-packed-tl-x.png)
+![Figma Auto Layout Example of layout-packed-tl-x](docs/images/figma-control/layout-packed-tl-x.png)
 
 <br>
 <br>
@@ -235,7 +235,7 @@ Use `layout-packed-tc-x` to align child elements at the top center of the contai
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-tc-x](docs/images/figma-control/layout-packed-tc-x.png)
+![Figma Auto Layout Example of layout-packed-tc-x](docs/images/figma-control/layout-packed-tc-x.png)
 
 <br>
 <br>
@@ -259,7 +259,7 @@ Use `layout-packed-tr-x` to align child elements at the top right of the contain
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-tr-x](docs/images/figma-control/layout-packed-tr-x.png)
+![Figma Auto Layout Example of layout-packed-tr-x](docs/images/figma-control/layout-packed-tr-x.png)
 
 <br>
 <br>
@@ -283,7 +283,7 @@ Use `layout-packed-ml-x` to align child elements at the middle left of the conta
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-ml-x](docs/images/figma-control/layout-packed-ml-x.png)
+![Figma Auto Layout Example of layout-packed-ml-x](docs/images/figma-control/layout-packed-ml-x.png)
 
 <br>
 <br>
@@ -307,7 +307,7 @@ Use `layout-packed-mc-x` to align child elements at the middle center of the con
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-mc-x](docs/images/figma-control/layout-packed-mc-x.png)
+![Figma Auto Layout Example of layout-packed-mc-x](docs/images/figma-control/layout-packed-mc-x.png)
 
 <br>
 <br>
@@ -331,7 +331,7 @@ Use `layout-packed-mr-x` to align child elements at the middle right of the cont
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-mr-x](docs/images/figma-control/layout-packed-mr-x.png)
+![Figma Auto Layout Example of layout-packed-mr-x](docs/images/figma-control/layout-packed-mr-x.png)
 
 <br>
 <br>
@@ -355,7 +355,7 @@ Use `layout-packed-bl-x` to align child elements at the bottom left of the conta
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-bl-x](docs/images/figma-control/layout-packed-bl-x.png)
+![Figma Auto Layout Example of layout-packed-bl-x](docs/images/figma-control/layout-packed-bl-x.png)
 
 <br>
 <br>
@@ -379,7 +379,7 @@ Use `layout-packed-bc-x` to align child elements at the bottom center of the con
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-bc-x](docs/images/figma-control/layout-packed-bc-x.png)
+![Figma Auto Layout Example of layout-packed-bc-x](docs/images/figma-control/layout-packed-bc-x.png)
 
 <br>
 <br>
@@ -403,7 +403,7 @@ Use `layout-packed-br-x` to align child elements at the bottom right of the cont
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-br-x](docs/images/figma-control/layout-packed-br-x.png)
+![Figma Auto Layout Example of layout-packed-br-x](docs/images/figma-control/layout-packed-br-x.png)
 
 <br>
 <br>
@@ -427,7 +427,7 @@ Use `layout-packed-tl-y` to align child elements at the top left of the containe
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-tl-y](docs/images/figma-control/layout-packed-tl-y.png)
+![Figma Auto Layout Example of layout-packed-tl-y](docs/images/figma-control/layout-packed-tl-y.png)
 
 <br>
 <br>
@@ -451,7 +451,7 @@ Use `layout-packed-tc-y` to align child elements at the top center of the contai
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-tc-y](docs/images/figma-control/layout-packed-tc-y.png)
+![Figma Auto Layout Example of layout-packed-tc-y](docs/images/figma-control/layout-packed-tc-y.png)
 
 <br>
 <br>
@@ -475,7 +475,7 @@ Use `layout-packed-tr-y` to align child elements at the top right of the contain
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-tr-y](docs/images/figma-control/layout-packed-tr-y.png)
+![Figma Auto Layout Example of layout-packed-tr-y](docs/images/figma-control/layout-packed-tr-y.png)
 
 <br>
 <br>
@@ -499,7 +499,7 @@ Use `layout-packed-ml-y` to align child elements at the middle left of the conta
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-ml-y](docs/images/figma-control/layout-packed-ml-y.png)
+![Figma Auto Layout Example of layout-packed-ml-y](docs/images/figma-control/layout-packed-ml-y.png)
 
 <br>
 <br>
@@ -523,7 +523,7 @@ Use `layout-packed-mc-y` to align child elements at the middle center of the con
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-mc-y](docs/images/figma-control/layout-packed-mc-y.png)
+![Figma Auto Layout Example of layout-packed-mc-y](docs/images/figma-control/layout-packed-mc-y.png)
 
 <br>
 <br>
@@ -547,7 +547,7 @@ Use `layout-packed-mr-y` to align child elements at the middle right of the cont
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-bl-y](docs/images/figma-control/layout-packed-mr-y.png)
+![Figma Auto Layout Example of layout-packed-bl-y](docs/images/figma-control/layout-packed-mr-y.png)
 
 <br>
 <br>
@@ -571,7 +571,7 @@ Use `layout-packed-bl-y` to align child elements at the bottom left of the conta
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-bl-y](docs/images/figma-control/layout-packed-bl-y.png)
+![Figma Auto Layout Example of layout-packed-bl-y](docs/images/figma-control/layout-packed-bl-y.png)
 
 <br>
 <br>
@@ -595,7 +595,7 @@ Use `layout-packed-bc-y` to align child elements at the bottom center of the con
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-bc-y](docs/images/figma-control/layout-packed-bc-y.png)
+![Figma Auto Layout Example of layout-packed-bc-y](docs/images/figma-control/layout-packed-bc-y.png)
 
 <br>
 <br>
@@ -619,7 +619,7 @@ Use `layout-packed-br-y` to align child elements at the bottom right of the cont
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-packed-br-y](docs/images/figma-control/layout-packed-br-y.png)
+![Figma Auto Layout Example of layout-packed-br-y](docs/images/figma-control/layout-packed-br-y.png)
 
 <br>
 <br>
@@ -643,7 +643,7 @@ Use `layout-spaced-l` to space child elements down along the left of the contain
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-spaced-l](docs/images/figma-control/layout-spaced-l.png)
+![Figma Auto Layout Example of layout-spaced-l](docs/images/figma-control/layout-spaced-l.png)
 
 <br>
 <br>
@@ -667,7 +667,7 @@ Use `layout-spaced-c` to space child elements down along the center of the conta
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-spaced-c](docs/images/figma-control/layout-spaced-c.png)
+![Figma Auto Layout Example of layout-spaced-c](docs/images/figma-control/layout-spaced-c.png)
 
 <br>
 <br>
@@ -691,7 +691,7 @@ Use `layout-spaced-r` to space child elements down along the right of the contai
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-spaced-r](docs/images/figma-control/layout-spaced-r.png)
+![Figma Auto Layout Example of layout-spaced-r](docs/images/figma-control/layout-spaced-r.png)
 
 <br>
 <br>
@@ -715,7 +715,7 @@ Use `layout-spaced-t` to space child elements across the top of the container.
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-spaced-t](docs/images/figma-control/layout-spaced-t.png)
+![Figma Auto Layout Example of layout-spaced-t](docs/images/figma-control/layout-spaced-t.png)
 
 <br>
 <br>
@@ -739,7 +739,7 @@ Use `layout-spaced-m` to space child elements across the middle of the container
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-spaced-m](docs/images/figma-control/layout-spaced-m.png)
+![Figma Auto Layout Example of layout-spaced-m](docs/images/figma-control/layout-spaced-m.png)
 
 <br>
 <br>
@@ -763,7 +763,7 @@ Use `layout-spaced-b` to space child elements across the bottom of the container
 
 ##### Figma Auto Layout Settings
 
-![Figmat Auto Layout Example of layout-spaced-b](docs/images/figma-control/layout-spaced-b.png)
+![Figma Auto Layout Example of layout-spaced-b](docs/images/figma-control/layout-spaced-b.png)
 
 ### ⭐️ Bonus ⭐️ : Auto Layout Grids
 
@@ -1011,9 +1011,9 @@ Use `layout-grid-br` to align child elements at the bottom right of each cell in
 
 ### Layout Helpers
 
-#### 📐 Layout: Inital HTML
+#### 📐 Layout: Initial HTML
 
-Use `layout-initial-html` sets the html defaults using the CSS `inital` property.
+Use `layout-initial-html` sets the html defaults using the CSS `initial` property.
 
 <br/>
 
@@ -1098,7 +1098,7 @@ Shorthand helper class for setting the same width and height property.
 
 ## Tailwind CSS Plugin Options
 
-Note: To ensure height and width work consistantly layouts-css sets the following overrides which can be turned off if need be :
+Note: To ensure height and width work consistently layouts-css sets the following overrides which can be turned off if need be :
 
 <br/>
 
