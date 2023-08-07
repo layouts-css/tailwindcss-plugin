@@ -122,7 +122,7 @@ Figma is a popular tool for designing websites and apps. The Auto Layout Feature
 
 The folloing image features the Auto Layout controls in Figma. The table details what can be done out-of-the box with Tailwind CSS and where the layouts-css is required.
 
-![Figma Controls](docs/images/figma-control/explaination.png)
+![Figma Controls](docs/images/figma-control/explanation.png)
 
 | Figma Control                                                                             | CSS Approach                                                                 |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
@@ -137,7 +137,7 @@ The folloing image features the Auto Layout controls in Figma. The table details
 
 The image below is controled by the html below.
 
-![Example](docs/images/layout-example/explaination.png)
+![Example](docs/images/layout-example/explanation.png)
 
 ###### HTML
 
