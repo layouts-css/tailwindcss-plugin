@@ -46,12 +46,7 @@ const layoutCss = withOptions((options = {}) => {
       },
 
       '.w-fill': {
-        width: [
-          '100%',
-          '-moz-available',
-          '-webkit-fill-available',
-          'fill-available',
-        ],
+        width: ['100%', '-moz-available', '-webkit-fill-available', 'stretch'],
       },
 
       '* > .h-fill': {
@@ -77,12 +72,7 @@ const layoutCss = withOptions((options = {}) => {
 
       '* > .s-fill': {
         height: '100%',
-        width: [
-          '100%',
-          '-moz-available',
-          '-webkit-fill-available',
-          'fill-available',
-        ],
+        width: ['100%', '-moz-available', '-webkit-fill-available', 'stretch'],
       },
 
       '.layout-packed-tl-x > .s-fill, .layout-packed-tc-x > .s-fill, .layout-packed-tr-x > .s-fill, .layout-packed-ml-x > .s-fill, .layout-packed-mc-x > .s-fill, .layout-packed-mr-x > .s-fill, .layout-packed-bl-x > .s-fill, .layout-packed-bc-x > .s-fill, .layout-packed-br-x > .s-fill, .layout-spaced-t > .s-fill, .layout-spaced-m > .s-fill, .layout-spaced-b > .s-fill':
@@ -93,7 +83,7 @@ const layoutCss = withOptions((options = {}) => {
             '100%',
             '-moz-available',
             '-webkit-fill-available',
-            'fill-available',
+            'stretch',
           ],
         },
 
@@ -105,7 +95,7 @@ const layoutCss = withOptions((options = {}) => {
             '100%',
             '-moz-available',
             '-webkit-fill-available',
-            'fill-available',
+            'stretch',
           ],
         },
 
@@ -116,7 +106,7 @@ const layoutCss = withOptions((options = {}) => {
             '100%',
             '-moz-available',
             '-webkit-fill-available',
-            'fill-available',
+            'stretch',
           ],
         },
 
