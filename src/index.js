@@ -22,6 +22,16 @@ const layoutCss = withOptions((options = {}) => {
           flexShrink: '1',
           height: value,
         }),
+        'w-max': (value) => ({
+          flexGrow: '1',
+          flexShrink: '1',
+          maxWidth: value,
+        }),
+        'h-max': (value) => ({
+          flexGrow: '1',
+          flexShrink: '1',
+          maxHeight: value,
+        }),
       },
       { values: theme('space') }
     );
@@ -40,6 +50,11 @@ const layoutCss = withOptions((options = {}) => {
         height: 'fit-content',
       },
 
+      '.w-foo': {
+        flexGrow: '1',
+        flexShrink: '0',
+        maxWidth: '94rem',
+      },
       '.s-hug': {
         width: 'fit-content',
         height: 'fit-content',
