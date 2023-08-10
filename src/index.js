@@ -22,15 +22,43 @@ const layoutCss = withOptions((options = {}) => {
           flexShrink: '1',
           height: value,
         }),
+      },
+      { values: theme('space') }
+    );
+    matchComponents(
+      /* Content Resizing Fixed */
+      {
         'w-max': (value) => ({
           flexGrow: '1',
           flexShrink: '1',
           maxWidth: value,
         }),
+      },
+      { values: theme('maxWidth') }
+    );
+    matchComponents(
+      /* Content Resizing Fixed */
+      {
         'h-max': (value) => ({
           flexGrow: '1',
           flexShrink: '1',
           maxHeight: value,
+        }),
+      },
+      { values: theme('maxHeight') }
+    );
+    matchComponents(
+      /* Content Resizing Min */
+      {
+        'w-min': (value) => ({
+          flexShrink: '0',
+          minWidth: value,
+        }),
+      },
+      {
+        'h-min': (value) => ({
+          flexShrink: '0',
+          minHeight: value,
         }),
       },
       { values: theme('space') }
@@ -55,6 +83,7 @@ const layoutCss = withOptions((options = {}) => {
         flexShrink: '0',
         maxWidth: '94rem',
       },
+
       '.s-hug': {
         width: 'fit-content',
         height: 'fit-content',

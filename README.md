@@ -1058,6 +1058,12 @@ Controlling size and resizing behavior in CSS through the specification of prope
 </div>
 ```
 
+Bonus
+
+`w-min-{number}` the element can have a min width set
+
+`w-max-{number}` the element can have a max width set
+
 <br/>
 
 ### ↕ Height
@@ -1083,6 +1089,12 @@ Controlling size and resizing behavior in CSS through the specification of prope
   <div class="w-fill h-fixed-[64px]">h-fixed-[160px]</div>
 </div>
 ```
+
+Bonus
+
+`h-min-{number}` the element can have a min height set
+
+`h-max-{number}` the element can have a max height set
 
 <br/>
 
