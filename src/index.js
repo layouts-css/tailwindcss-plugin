@@ -25,6 +25,7 @@ const layoutCss = withOptions((options = {}) => {
       },
       { values: theme('space') }
     );
+
     matchComponents(
       /* Content Resizing Fixed */
       {
@@ -36,6 +37,7 @@ const layoutCss = withOptions((options = {}) => {
       },
       { values: theme('maxWidth') }
     );
+
     matchComponents(
       /* Content Resizing Fixed */
       {
@@ -47,6 +49,7 @@ const layoutCss = withOptions((options = {}) => {
       },
       { values: theme('maxHeight') }
     );
+
     matchComponents(
       /* Content Resizing Min */
       {
@@ -54,8 +57,6 @@ const layoutCss = withOptions((options = {}) => {
           flexShrink: '0',
           minWidth: value,
         }),
-      },
-      {
         'h-min': (value) => ({
           flexShrink: '0',
           minHeight: value,
@@ -76,12 +77,6 @@ const layoutCss = withOptions((options = {}) => {
 
       '.h-hug': {
         height: 'fit-content',
-      },
-
-      '.w-foo': {
-        flexGrow: '1',
-        flexShrink: '0',
-        maxWidth: '94rem',
       },
 
       '.s-hug': {
