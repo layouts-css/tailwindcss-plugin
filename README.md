@@ -21,6 +21,31 @@ layouts-css makes it a breeze to layout HTML with it's easy-to-understand CSS la
 
 <hr/>
 
+- [🛌 @layouts-css/tailwindcss-plugin](#-layouts-csstailwindcss-plugin)
+  - [Getting Started](#getting-started)
+  - [Key Concepts](#key-concepts)
+    - [Sizing Layout Classes](#sizing-layout-classes)
+    - [Single-Panel Layout Classes](#single-panel-layout-classes)
+    - [🚧 Responsive-Multi-Panel Layout Classes](#-responsive-multi-panel-layout-classes)
+  - [Usage](#usage)
+    - [Control the layout and how the child components resize](#control-the-layout-and-how-the-child-components-resize)
+    - [Example](#example) - [HTML](#html)
+  - [Single Panel Layout Classes](#single-panel-layout-classes-1)
+    - [Layout Class Structure](#layout-class-structure)
+    - [Layout Properties](#layout-properties)
+    - [Alignment Properties](#alignment-properties)
+    - [Single Axis Layouts Classes](#single-axis-layouts-classes)
+    - [⭐️ Bonus ⭐️ : Auto Layout Grids](#️-bonus-️--auto-layout-grids)
+    - [Grid Layout Classes](#grid-layout-classes)
+    - [Layout Helpers](#layout-helpers)
+  - [Sizing Layout Classes](#sizing-layout-classes-1)
+    - [↔️ Width](#️-width)
+    - [↕ Height](#-height)
+    - [🔲 Size](#-size)
+  - [Tailwind CSS Plugin Options](#tailwind-css-plugin-options)
+  - [Demo](#demo)
+  - [FAQs](#faqs) - [Q: Do I need Tailwind CSS to use this layouts-css?](#q-do-i-need-tailwind-css-to-use-this-layouts-css) - [Q: Why not just learn how CSS Felxbox and Grid work?](#q-why-not-just-learn-how-css-felxbox-and-grid-work)
+
 ## Getting Started
 
 ℹ️ This guide assume you have Tailwind already setup and configured.
@@ -34,7 +59,7 @@ layouts-css makes it a breeze to layout HTML with it's easy-to-understand CSS la
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  plugins: [require('@layouts-css/tailwindcss')],
+  plugins: [require("@layouts-css/tailwindcss")],
 };
 ```
 
