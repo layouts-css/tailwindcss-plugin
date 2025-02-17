@@ -95,7 +95,7 @@ const layoutCss = withOptions((options = {}) => {
       '.layout-packed-tl-x > .h-fill, .layout-packed-tc-x > .h-fill, .layout-packed-tr-x > .h-fill, .layout-packed-ml-x > .h-fill, .layout-packed-mc-x > .h-fill, .layout-packed-mr-x > .h-fill, .layout-packed-bl-x > .h-fill, .layout-packed-bc-x > .h-fill, .layout-packed-br-x > .h-fill, .layout-spaced-t > .h-fill, .layout-spaced-m > .h-fill, .layout-spaced-b > .h-fill':
         {
           alignSelf: 'stretch',
-          flexGrow: 'auto',
+          flexGrow: '0',
         },
 
       '.layout-packed-tl-y > .h-fill, .layout-packed-tc-y > .h-fill, .layout-packed-tr-y > .h-fill, .layout-packed-ml-y > .h-fill, .layout-packed-mc-y > .h-fill, .layout-packed-mr-y > .h-fill, .layout-packed-bl-y > .h-fill, .layout-packed-bc-y > .h-fill, .layout-packed-br-y > .h-fill, .layout-spaced-l > .h-fill, .layout-spaced-c > .h-fill, .layout-spaced-r > .h-fill':
@@ -117,7 +117,7 @@ const layoutCss = withOptions((options = {}) => {
       '.layout-packed-tl-x > .s-fill, .layout-packed-tc-x > .s-fill, .layout-packed-tr-x > .s-fill, .layout-packed-ml-x > .s-fill, .layout-packed-mc-x > .s-fill, .layout-packed-mr-x > .s-fill, .layout-packed-bl-x > .s-fill, .layout-packed-bc-x > .s-fill, .layout-packed-br-x > .s-fill, .layout-spaced-t > .s-fill, .layout-spaced-m > .s-fill, .layout-spaced-b > .s-fill':
         {
           alignSelf: 'stretch',
-          flexGrow: 'auto',
+          flexGrow: '0',
           width: [
             '100%',
             '-moz-available',
