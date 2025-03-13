@@ -1,0 +1,354 @@
+/* Dynamic utilities */
+@utility h-fixed-* {
+  flex-grow: 0;
+  flex-shrink: 1;
+  height: calc(var(--spacing) * --value(integer));
+  height: --value([*]);
+}
+
+@utility w-max-* {
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: calc(var(--spacing) * --value(integer));
+  max-width: --value([*]);
+}
+
+@utility h-max-* {
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-height: calc(var(--spacing) * --value(integer));
+  max-height: --value([*]);
+}
+
+@utility w-min-* {
+  flex-shrink: 0;
+  min-width: calc(var(--spacing) * --value(integer));
+  min-width: --value([*]);
+}
+
+@utility h-min-* {
+  flex-shrink: 0;
+  min-height: calc(var(--spacing) * --value(integer));
+  min-height: --value([*]);
+}
+
+/* Static utilities */
+@utility w-hug {
+  width: fit-content;
+}
+
+@utility h-hug {
+  height: fit-content;
+}
+
+@utility w-fill {
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: stretch;
+}
+
+@utility h-fill {
+  height: 100%;
+  align-self: var(--h-fill-align, auto);
+  flex-grow: var(--h-fill-grow, 0);
+}
+
+@utility w-initial {
+  width: initial;
+}
+
+@utility h-initial {
+  height: initial;
+}
+
+/* Layout Initial Html */
+@utility layout-initial-html {
+  display: initial;
+  flex-direction: initial;
+  justify-content: initial;
+  align-items: initial;
+}
+
+/* Layout Revert Html */
+@utility layout-revert-html {
+  display: revert;
+  flex-direction: revert;
+  justify-content: revert;
+  align-items: revert;
+}
+
+/* Layout Horizontally Packed  */
+@utility layout-packed-tl-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-packed-tc-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-packed-tr-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-packed-ml-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-packed-mc-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-packed-mr-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-packed-bl-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-packed-bc-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-packed-br-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+/* Layout Vertically Packed  */
+@utility layout-packed-tl-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-packed-tc-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-packed-tr-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-packed-ml-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-packed-mc-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-packed-mr-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-packed-bl-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-packed-bc-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-packed-br-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+/* Layout Horizontally Spaced */
+@utility layout-spaced-t {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-spaced-m {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+@utility layout-spaced-b {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  --h-fill-align: stretch;
+  --h-fill-grow: 0;
+}
+
+/* Layout Vertically Spaced */
+@utility layout-spaced-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-spaced-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+@utility layout-spaced-r {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  --h-fill-align: auto;
+  --h-fill-grow: 1;
+}
+
+/* Layout Grid */
+@utility layout-grid-tl {
+  display: grid;
+  align-items: start;
+  justify-items: start;
+}
+
+@utility layout-grid-tc {
+  display: grid;
+  align-items: start;
+  justify-items: center;
+}
+
+@utility layout-grid-tr {
+  display: grid;
+  align-items: start;
+  justify-items: end;
+}
+
+@utility layout-grid-ml {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+}
+
+@utility layout-grid-mc {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+@utility layout-grid-mr {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+}
+
+@utility layout-grid-bl {
+  display: grid;
+  align-items: end;
+  justify-items: start;
+}
+
+@utility layout-grid-bc {
+  display: grid;
+  align-items: end;
+  justify-items: center;
+}
+
+@utility layout-grid-br {
+  display: grid;
+  align-items: end;
+  justify-items: end;
+}

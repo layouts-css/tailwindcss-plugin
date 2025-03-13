@@ -21,9 +21,31 @@ layouts-css makes it a breeze to layout HTML with it's easy-to-understand CSS la
 
 <hr/>
 
-## Getting Started
+## Getting Started using tailwind V4
+There are two approaches
 
-ℹ️ This guide assume you have Tailwind already setup and configured.
+#### Options 1 - (Recommended) Copy paste into your global.css
+Tailwind v4 introduces css based config meaning code can be shared without another npm package to download
+
+* Copy everything in [layouts.css](src/layouts.css)
+* Paste into your `global.css`
+
+💥 Boom - you're done and with one less package
+
+#### Options 2 - Link in your node modules
+
+`npm i -D @layouts-css/tailwindcss`
+
+In `global.css` add the
+```
+@import '@layouts-css/tailwindcss-layouts/src/layouts.css';
+```
+
+Seriously though don't do this...
+
+## Getting Started using tailwind V3
+
+ℹ️ This guide assume you have Tailwind v3 already setup and configure.
 
 #### Install package
 
@@ -1096,15 +1118,6 @@ Bonus
 
 `h-max-{number}` the element can have a max height set
 
-<br/>
-
-### 🔲 Size
-
-Shorthand helper class for setting the same width and height property.
-
-`s-hug` the element hugs the width and height of it's content.
-
-`s-fill` the element fills the remaining width and height of it's parent element.
 
 <br/>
 
@@ -1139,15 +1152,6 @@ module.exports = {
 - Elements without a layout class will respect default html block & inline element behavior.
 - `body` & `html` both have `width` and `height` set to `100%`
 
-<br/>
-
-## Demo
-
-If you are interested in comparing layouts with and without check out the following Tailwind CSS play links:
-
-- ❌ [Without layouts-css](https://) **🚧 Coming Soon**
-
-- ✅ [With layouts-css](https://) **🚧 Coming Soon**
 
 <br>
 
@@ -1163,7 +1167,6 @@ A: Hopefully not for long
 _**🚧 Coming soon**_
 
 - [@layouts-css/plain-css](https://github.com/layouts-css/plain-css)
-- [@layouts-css/vanilla-extract](https://github.com/layouts-css/vanilla-extract) (CSS in JS/TS)
 
 <br>
 

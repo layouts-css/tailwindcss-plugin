@@ -1,6 +1,6 @@
 {
   "name": "@layouts-css/tailwindcss-plugin",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "repository": "https://github.com/layouts-css/tailwindcss-plugin",
@@ -10,8 +10,7 @@
   },
   "devDependencies": {
     "postcss": "^8.5.2",
-    "prettier": "^3.5.1",
-    "tailwindcss": "^3.4.17"
+    "prettier": "^3.5.1"
   },
   "peerDependencies": {
     "tailwindcss": ">=3.0.0 || insiders"

@@ -109,50 +109,7 @@ const layoutCss = withOptions((options = {}) => {
           height: '100%',
         },
 
-      '* > .s-fill': {
-        height: '100%',
-        width: ['100%', '-moz-available', '-webkit-fill-available', 'stretch'],
-      },
 
-      '.layout-packed-tl-x > .s-fill, .layout-packed-tc-x > .s-fill, .layout-packed-tr-x > .s-fill, .layout-packed-ml-x > .s-fill, .layout-packed-mc-x > .s-fill, .layout-packed-mr-x > .s-fill, .layout-packed-bl-x > .s-fill, .layout-packed-bc-x > .s-fill, .layout-packed-br-x > .s-fill, .layout-spaced-t > .s-fill, .layout-spaced-m > .s-fill, .layout-spaced-b > .s-fill':
-        {
-          alignSelf: 'stretch',
-          flexGrow: '0',
-          width: [
-            '100%',
-            '-moz-available',
-            '-webkit-fill-available',
-            'stretch',
-          ],
-        },
-
-      '.layout-packed-tl-y > .s-fill, .layout-packed-tc-y > .s-fill, .layout-packed-tr-y > .s-fill, .layout-packed-ml-y > .s-fill, .layout-packed-mc-y > .s-fill, .layout-packed-mr-y > .s-fill, .layout-packed-bl-y > .s-fill, .layout-packed-bc-y > .s-fill, .layout-packed-br-y > .s-fill, .layout-spaced-l > .s-fill, .layout-spaced-c > .s-fill, .layout-spaced-r > .s-fill':
-        {
-          alignSelf: 'auto',
-          flexGrow: '1',
-          width: [
-            '100%',
-            '-moz-available',
-            '-webkit-fill-available',
-            'stretch',
-          ],
-        },
-
-      '.layout-grid-tl > .s-fill, .layout-grid-tc > .s-fill, .layout-grid-tr > .s-fill, .layout-grid-ml > .s-fill, .layout-grid-mc > .s-fill, .layout-grid-mr > .s-fill, .layout-grid-bl > .s-fill, .layout-grid-bc > .s-fill, .layout-grid-br > .s-fill':
-        {
-          height: '100%',
-          width: [
-            '100%',
-            '-moz-available',
-            '-webkit-fill-available',
-            'stretch',
-          ],
-        },
-
-      '.s-initial': {
-        height: 'initial',
-        width: 'initial',
-      },
       '.w-initial': {
         width: 'initial',
       },
